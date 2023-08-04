@@ -1,0 +1,15 @@
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <label for="material">Material:</label>
+    <select name="material">
+        <option value="Al">Al</option>
+        <option value="Mg">Mg</option>
+        <option value="Fe(水)">Fe1</option>
+        <option value="Fe(炉)">Fe2</option>
+        <option value="PET">PET</option>
+        <!-- 他のオプションも追加 -->
+    </select>
+    <label for="area">Area (mm²):</label>
+    <input type="text" name="area">
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+</form>
