@@ -26,9 +26,7 @@ def analyze_file():
     data['Load_N'] = data['Analog1']*200
     data['Strain_percentage']=data['Analog2']/data['Analog2'].median()
     data['Stroke_mm'] = data['Analog3']*6
-    def time_to_seconds(time):
-       return time.hour*3600 + time.minute*60 + time.second
-    data['time_seconds'] = data['time'].apply(time_to_seconds)
+    data['time_seconds'] =[i * 0.05 for i in range(len(data))]
     plt.plot(data['time_seconds'], data['Load_N'])
     image_filename = 'result.png'
     image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
