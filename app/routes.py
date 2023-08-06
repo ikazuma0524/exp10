@@ -84,9 +84,66 @@ def analyze_file():
     
     plt.clf()
     
-    plt
+    plt.xlabel('Nominal Strain (gage) (%)')
+    plt.ylabel('Nominal Stress_(MPa)')
+    plt.plot(data['Nominal_Strain(gage)_(%)'], data['Nominal_Stress_(MPa)'])
+    image_filename_3 = 'fig3.png'
+    image_path_3 = os.path.join(app.config['UPLOAD_FOLDER'], image_filename_3)
+    image_url_3 = url_for('static', filename=f'images/{image_filename_3}')
+    plt.savefig(image_path_3)
+    
+    plt.clf()
+    
+    plt.xlabel('Nominal Strain (Stroke) (%)')
+    plt.ylabel('Nominal Stress (MPa)')
+    plt.plot(data['Nominal_Strain(Stroke)_(%)'], data['Nominal_Stress_(MPa)'])
+    image_filename_4 = 'fig4.png'
+    image_path_4 = os.path.join(app.config['UPLOAD_FOLDER'], image_filename_4)
+    image_url_4 = url_for('static', filename=f'images/{image_filename_4}')
+    plt.savefig(image_path_4)
+    
+    plt.clf()
+    
+    plt.xlabel('True Strain (gage) (%)')
+    plt.ylabel('True Stress (gage) (MPa)')
+    plt.plot(data['True_Strain(gage)_(%)'], data['True_Stress(gage)_(MPa)'])
+    image_filename_5 = 'fig5.png'
+    image_path_5 = os.path.join(app.config['UPLOAD_FOLDER'], image_filename_5)
+    image_url_5 = url_for('static', filename=f'images/{image_filename_5}')
+    plt.savefig(image_path_5)
+    
+    plt.clf()
+    
+    plt.xlabel('True Strain (Stroke) (%)')
+    plt.ylabel('True Stress (Stroke) (MPa)')
+    plt.plot(data['True_Strain(Stroke)_(%)'], data['True_Stress(Stroke)_(MPa)'])
+    image_filename_6 = 'fig6.png'
+    image_path_6 = os.path.join(app.config['UPLOAD_FOLDER'], image_filename_6)
+    image_url_6 = url_for('static', filename=f'images/{image_filename_6}')
+    plt.savefig(image_path_6)
+    
+    plt.clf()
+    
+    plt.xlabel('log_True_Strain (gage) (%)')
+    plt.ylabel('log_True_Stress (gage) (MPa)')
+    plt.plot(data['log_True_Strain(gage)'], data['log_True_Stress(gage)'])
+    image_filename_7 = 'fig7.png'
+    image_path_7 = os.path.join(app.config['UPLOAD_FOLDER'], image_filename_7)
+    image_url_7 = url_for('static', filename=f'images/{image_filename_7}')
+    plt.savefig(image_path_7)
+    
+    plt.clf()
+    
+    plt.xlabel('log_True_Strain (Stroke) (%)')
+    plt.ylabel('log_True_Stress (Stroke) (MPa)')
+    plt.plot(data['log_True_Strain(Stroke)'], data['log_True_Stress(Stroke)'])
+    image_filename_8 = 'fig8.png'
+    image_path_8 = os.path.join(app.config['UPLOAD_FOLDER'], image_filename_8)
+    image_url_8 = url_for('static', filename=f'images/{image_filename_8}')
+    plt.savefig(image_path_8)
+    return render_template( 'result.html',image_path=image_url, image_path_2=image_url_2, image_path_3=image_url_3, image_path_4=image_url_4, image_path_5=image_url_5, image_path_6=image_url_6, image_path_7=image_url_7, image_path_8=image_url_8)
     
     
     
     
-    return render_template('result.html', image_path=image_url, image_path_2=image_url_2)
+  
