@@ -60,8 +60,6 @@ def analyze_file():
     data['log_True_Stress(Stroke)'] = data['True_Stress(Stroke)_(MPa)'].apply(safe_log)
     data['log_True_Strain(Stroke)'] = data['True_Strain(Stroke)_(%)'].apply(safe_log_2)
     
-    
-    
     plt.xlabel('Time (s)')
     plt.ylabel('Analog 1 (V)')
     plt.plot(data['time_seconds'], data['Analog1'])
@@ -101,9 +99,8 @@ def analyze_file():
     image_path_4 = os.path.join(app.config['UPLOAD_FOLDER'], image_filename_4)
     image_url_4 = url_for('static', filename=f'images/{image_filename_4}')
     plt.savefig(image_path_4)
-    
     plt.clf()
-    
+
     plt.xlabel('True Strain (gage) (%)')
     plt.ylabel('True Stress (gage) (MPa)')
     plt.plot(data['True_Strain(gage)_(%)'], data['True_Stress(gage)_(MPa)'])
